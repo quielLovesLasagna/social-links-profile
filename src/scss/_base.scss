@@ -1,0 +1,96 @@
+@use "./abstracts" as abs;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: abs.$ff-inter;
+	font-size: abs.toRem(16px);
+	background-color: abs.$cl-off-black;
+}
+
+img,
+svg {
+	max-width: 100%;
+	display: inline-block;
+}
+
+.profile {
+	background-color: abs.$cl-dark-grey;
+	padding: abs.toRem(40px);
+	border-radius: abs.toRem(15px);
+
+	&__info {
+		text-align: center;
+		padding-inline: abs.toRem(25px);
+	}
+
+	&__image {
+		width: abs.toRem(100px);
+		height: abs.toRem(100px);
+		border-radius: 50%;
+		margin-bottom: abs.toRem(20px);
+	}
+
+	&__name {
+		color: abs.$cl-white;
+		font-size: abs.toRem(28px);
+		font-weight: abs.$fw-medium;
+		margin-bottom: abs.toRem(10px);
+	}
+
+	&__location {
+		font-weight: abs.$fw-large;
+		color: abs.$cl-green;
+		margin-bottom: abs.toRem(25px);
+	}
+
+	&__bio {
+		color: abs.$cl-light-grey;
+		font-weight: abs.$fw-tiny;
+		margin-bottom: abs.toRem(18px);
+	}
+}
+
+.social {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: abs.toRem(15px);
+
+	&__item {
+		cursor: pointer;
+		text-align: center;
+		width: 100%;
+		background-color: abs.$cl-grey;
+		padding: abs.toRem(14px) abs.toRem(20px);
+		border-radius: abs.toRem(8px);
+		@include abs.transitionAll;
+	}
+
+	&__link {
+		color: abs.$cl-white;
+		text-decoration: none;
+		font-weight: abs.$fw-large;
+		@include abs.transitionAll;
+	}
+
+	&__item:hover {
+		background-color: abs.$cl-green;
+	}
+
+	&__item:hover &__link {
+		color: abs.$cl-dark-grey;
+	}
+}

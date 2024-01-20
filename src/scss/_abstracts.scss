@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+// COLORS
+$cl-green: hsl(75, 94%, 57%);
+$cl-white: hsl(0, 0%, 100%);
+$cl-grey: hsl(0, 0%, 20%);
+$cl-light-grey: hsl(0, 0%, 76%);
+$cl-dark-grey: hsl(0, 0%, 12%);
+$cl-off-black: hsl(0, 0%, 8%);
+
+// FONT-FAMILT
+$ff-inter: "Inter", sans-serif;
+
+// FONT-WEIGHT
+$fw-tiny: 400;
+$fw-medium: 600;
+$fw-large: 700;
+
+// FUNCTION/S
+@function toRem($size) {
+	$remSize: calc($size / 16px);
+	@return #{$remSize}rem;
+}
+
+// MIXIN/S
+@mixin transitionAll {
+	transition: all 0.2s;
+}
